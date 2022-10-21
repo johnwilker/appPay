@@ -13,7 +13,7 @@ function setCardType(type) {
   }
   ccBgColor01.setAttribute("fill", colors[type][0])
   ccBgColor02.setAttribute("fill", colors[type][1])
-  ccLogo.setAttribute("fill", `cc-${type}.svg`)
+  ccLogo.setAttribute("src", `cc-${type}.svg`)
 }
 
 const securityCode = document.querySelector("#security-code")
@@ -96,6 +96,7 @@ function updateSecurityCode(code) {
 
 cardNumberMasked.on("accept", () => {
   const cardType = cardNumberMasked.masked.currentMask.cardtype
+  console.log(cardType)
   setCardType(cardType)
   upadteCardNumber(cardNumberMasked.value)
 })
